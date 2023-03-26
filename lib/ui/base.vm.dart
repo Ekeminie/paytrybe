@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:paytrybe/locator.dart';
-import 'package:paytrybe/utils/debounce.dart';
 
 import '../core/enum/viewState.enum.dart';
 import '../core/services/navigation_service.dart';
 
 class BaseViewModel extends ChangeNotifier {
-  final debouncer = Debouncer();
   ViewState _viewState = ViewState.idle;
   NavigationService navigationService = getIt<NavigationService>();
 

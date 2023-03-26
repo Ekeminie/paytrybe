@@ -17,6 +17,15 @@ class Welcome extends StatefulWidget {
 
 class _WelcomeState extends State<Welcome> {
   @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+      const Duration(seconds: 2),
+      () => Navigator.pushNamed(context, Routes.getStartedRoute),
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BaseView<WelcomeViewModel>(
         builder: (context, model, child) => Scaffold(
@@ -26,10 +35,7 @@ class _WelcomeState extends State<Welcome> {
               width: width(context),
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Center(
-                child: GestureDetector(
-                    onTap: () => model.navigationService
-                        .navigateTo(Routes.getStartedRoute),
-                    child: SvgPicture.asset('logo'.svg)),
+                child: SvgPicture.asset('logo'.svg),
               ),
             )));
   }

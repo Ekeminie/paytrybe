@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:paytrybe/ui/widgets/toast.dart';
 
 import '../../base.vm.dart';
 
@@ -47,18 +46,6 @@ class SignUpViewModel extends BaseViewModel {
   String? _password;
   String? _phoneNumber;
   String? _countryCode;
-
-  showValidationMessage() {
-    if (!hasFName) {
-      showCustomToast("Please enter your First Name");
-    } else if (!hasLName) {
-      showCustomToast("Please enter your Last Name");
-    } else if (!hasPhone) {
-      showCustomToast("Please enter a valid Phone Number");
-    } else if (!hasPassword) {
-      showCustomToast("Please enter your password");
-    }
-  }
 
   String? get email => _email;
 
